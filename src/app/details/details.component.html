@@ -1,23 +1,49 @@
-  <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-      <div class="container"><a class="navbar-brand" href="#" style="font-family:Cookie, cursive;">SUSF</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-          <div
-              class="collapse navbar-collapse" id="navcol-1">
-              <ul class="nav navbar-nav mr-auto"></ul><span class="navbar-text actions"> <a href="#" class="login">Log In</a><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></span></div>
-      </div>
-  </nav>
-  <div class="container" style="background-color:#343030;">
-      <h1 class="text-center"></h1>
+<div class="container" style="background-color:#343030;">
+  <h1 class="text-center"></h1>
+  <div class="row">
+    <div class="col-md-7">
       <div class="row">
-          <div class="col-md-7">
-              <div class="row">
-                  <div class="col-md-12"><img class="img-thumbnail img-fluid center-block" src="assets/img/videomicme.png"></div>
-              </div>
-          </div>
-          <div class="col-md-5">
-              <h1 style="font-family:Cookie, cursive;">Name&nbsp;</h1>
-              <h2 class="text-center text-success" style="color:rgb(249,249,252);font-family:Amaranth, sans-serif;">&nbsp;318.00</h2>
-              <div class="dropdown"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Size&nbsp;</button>
-                  <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Large</a><a class="dropdown-item" role="presentation" href="#"></a><a class="dropdown-item" role="presentation" href="#">Medium</a><a class="dropdown-item" role="presentation" href="#">Small</a></div>
-              </div><button class="btn btn-danger btn-lg center-block" type="button" style="background-color:rgb(42,159,214);"><i class="fa fa-cart-plus"></i> Add to Cart</button><button class="btn btn-danger btn-lg center-block" type="button" style="background-color:rgb(42,159,214);">Continue shopping</button></div>
+        <div class="col-md-12">
+          <img
+            class="img-thumbnail img-fluid center-block"
+            src="{{ Details.image }}"
+          />
+        </div>
       </div>
+    </div>
+    <div class="col-md-5">
+      <h1 style="font-family:Cookie, cursive;">{{ Details.name }}&nbsp;</h1>
+      <h2
+        class="text-center text-success"
+        style="color:rgb(249,249,252);font-family:Amaranth, sans-serif;"
+      >
+        &nbsp;400
+      </h2>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select id="size" class="form-control" id="exampleFormControlSelect1" >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>  
+      <button
+        class="btn btn-danger btn-lg center-block"
+        (click)="Order()"
+        type="button"
+        style="background-color:rgb(42,159,214);"
+        
+      >
+        <i class="fa fa-cart-plus"></i> Add to Cart</button
+      ><button
+        class="btn btn-danger btn-lg center-block"
+        type="button"
+        style="background-color:rgb(42,159,214);"
+      >
+        Continue shopping
+      </button>
+    </div>
   </div>
+</div>

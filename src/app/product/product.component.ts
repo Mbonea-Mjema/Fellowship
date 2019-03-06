@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from "@angular/router";
+import {DataService} from '../Services/data.service'
 
 @Component({
   selector: 'app-product',
@@ -6,10 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor( private routing: Router,private tranfer:DataService) { }
 
   ngOnInit() {
   }
+ Buy(img:string,name:string){
+  let image:any= document.getElementById(img).src;
+  let detail= document.getElementById(name).textContent;
+  let data:object={'image':image,'name':detail}
+  this.tranfer.Data.next(data);
+  console.log(data)
+  
+  this.routing.navigate(["/Details"]);
+  console.log(data)
+ }
+
 
 }
