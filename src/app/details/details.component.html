@@ -19,16 +19,17 @@
       >
         &nbsp;400
       </h2>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Example select</label>
-        <select id="size" class="form-control" id="exampleFormControlSelect1" >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </div>  
+
+      <div id="month-dropdown" class="btn-group">
+        <button type="button " class="btn btn-info" style="background-color:rgb(42,159,214);"> {{size}} </button>
+        <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:rgb(42,159,214);">
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" *ngFor="let size of Sizes" (click)="setSize(size)">{{size}}</a>
+        </div>
+      </div>
+      
       <button
         class="btn btn-danger btn-lg center-block"
         (click)="Order()"

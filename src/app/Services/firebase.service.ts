@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { BehaviorSubject  } from "rxjs";
 
 
@@ -9,7 +10,7 @@ import { BehaviorSubject  } from "rxjs";
 })
 export class FirebaseService {
   public User = new BehaviorSubject<any>('hello');
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth,public dataBase:AngularFirestore) { }
 
 
   doGoogleLogin(){
@@ -27,4 +28,8 @@ export class FirebaseService {
       })
     })
   }
+
+
+ 
+
 }
